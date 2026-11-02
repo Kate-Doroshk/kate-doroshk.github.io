@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 4: Unity No-Code Toolkit | CS 480</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <p class="site-title">CS 480 Digital Archive</p>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../hw1/index.html">HW 1</a>
+                <a href="../hw2/index.html">HW 2</a>
+                <a href="../hw3/index.html">HW 3</a>
+                <a href="index.html">HW 4</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="assignment-header">
+            <h1>HW 4: Unity No-Code Toolkit</h1>
+            <p>CS 480 · Interactive XR Documentaries · Fall 2026</p>
+        </section>
+
+        <section class="assignment-section">
+            <h2>Project Overview</h2>
+            <p>
+                For this assignment, I built a small toolkit of reusable Unity components that let a designer
+                create interactions through the Inspector instead of writing a new C# script for every event.
+                The toolkit includes a trigger action, a timer, a collision action, and a sequence action. I
+                also explored Unity's built-in XR Grab Interactable to see how an existing component exposes
+                useful interactions through Inspector events.
+            </p>
+            <p>
+                The goal is to make common interaction logic easier for non-programmers to configure. A designer
+                can choose what happens when an object enters an area, when time runs out, when two objects
+                collide, or when a sequence reaches each step, simply by connecting events to public methods
+                in the Unity Inspector.
+            </p>
+        </section>
+
+        <section class="assignment-section">
+            <h2>Gameplay Walkthrough</h2>
+            <p>
+                The video below demonstrates the finished scene, including grabbing an apple, triggering events through a trigger and a collision, and showing how the toolkit components work together.
+            </p>
+            <div class="video-container">
+                <!-- Replace VIDEO_EMBED_URL with the embed URL for your uploaded 60–120 second walkthrough. -->
+                <iframe
+                    width="560"
+                    height="320"
+                    src="https://jmu.instructuremedia.com/embed/677dfef7-8aa9-4dd6-a1e1-f865f847699b"
+                    title="HW 4 Unity No-Code Toolkit Walkthrough"
+                    allow="autoplay *; fullscreen *"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="assignment-section">
+            <p>
+    <a href="XR No-Code Toolkit Documentation .pdf" target="_blank">
+        View the No-Code Toolkit Documentation (PDF)
+    </a>
+</p>
+        </section>
+        <section class="assignment-section">
+            <h2>Toolkit Scripts</h2>
+            <p>
+                These are the four reusable components used in this assignment. The links below point to the
+                C# files in the <code>scripts</code> folder. Keep the files in that folder or update the links
+                if you organize the archive differently.
+            </p>
+            <ul>
+                <li><a href="OnTriggerAction.cs">OnTriggerAction.cs</a> — responds to tagged objects entering or exiting a trigger.</li>
+                <li><a href="TimedAction.cs">TimedAction.cs</a> — runs and repeats an event after a countdown.</li>
+                <li><a href="CollideAction.cs">CollideAction.cs</a> — responds to physical collisions with tagged objects.</li>
+                <li><a href="SequenceAction.cs">SequenceAction.cs</a> — runs a timed sequence of UnityEvents.</li>
+            </ul>
+        </section>
+
+        <section class="assignment-section">
+            <h2>Reflection: Key Takeaways</h2>
+            <p>
+                One takeaway for me is that a small amount of reusable scripts allows for a great deal of customization. With just four scripts, virtually all time-based and collision/trigger based events and sequences can be configured through the inspector interface. I'm sure that other events and features can also be generalized easily, so maybe we can add to our toolkit in the future if needed.
+            </p>
+            <p>
+                A second takeaway is that timing and order matter in XR interactions. A sequence can make an interaction
+                feel intentional by spacing out text, sound, and environmental changes. At the same time, each delay
+                and event connection needs to be easy to understand so another designer can adjust it safely.
+            </p>
+            <p>
+                A third takeaway is that documentation is essential when working with non-engineers. Compared to other CS homeworks, which required minimal documentation as they would be viewed and graded by a CS instructor, the toolkit requires much more guidance built in. Designers are not only unfamilliar with programming, but also with the relatively complex Unity inspector interface. It's important that they have guidance in a medium that's familiar to them.
+            </p>
+
+            <section class="assignment-section">
+            <h2>Connection to our Project</h2>
+            <p>
+                The toolkit enables designers to participate in the implementation of their vision. Rather than having to communicate their vision to the programmers in the group and playing a game of telephone, they now can seamlessly implement their ideas, themselves in any way they chose. Since all of our teammates parttake in the design of our projects, it is important that we also all can contribute to the implementation. Of course, more complex and non-standard interactions will still require custom scripts, but the toolkit is highly extensible and we can always add new scripts for our collaborators to use.
+            </p>
+        </section>
+        </section>
+
+        <section class="assignment-section">
+            <h2>Challenges and Documentation Testing</h2>
+            <p>
+                One challenge in this kind of toolkit is making sure the components work together rather than only
+                working in isolation. Tags, Collider settings, Rigidbody requirements, and UnityEvent references all
+                need to be configured correctly. A small setup mistake can make an interaction appear broken even when
+                the script itself is correct.
+            </p>
+            <p>
+                In testing with my non-programmer roommate, I found that it is difficult to generalize the documentation for the toolkit to clarify the breadth of configurations it enables. My roommate kept asking questions about what could be used where and what could be used as variables in the scripts. I realized that I needed to clarify the documentation to explain that the scripts are designed to be flexible and work with any object that meets the requirements, rather than being limited to specific objects or scenarios.
+            </p>
+        </section>
+
+
+
+        <a href="../index.html" class="button">← Back to Archive</a>
+    </main>
+
+    <footer>
+        <p>CS 480 Digital Archive · Kate Doroshkevych</p>
+    </footer>
+</body>
+</html>
